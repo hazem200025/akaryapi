@@ -1,0 +1,141 @@
+.searchBar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .type {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button {
+      font-size: 16px;
+      padding: 12px 24px;
+      margin: 0 10px;
+      background-color: #f0f0f0;
+      color: #555555;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+
+      &.active {
+        background-color: #fece51;
+        color: #ffffff;
+      }
+
+      &:hover {
+        background-color: #fece51;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+
+      .select-city {
+        flex: 1;
+        padding: 14px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: #fece51;
+        }
+      }
+
+      .price-inputs {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-right: 10px;
+        margin-bottom: 20px;
+
+        .input-price {
+          flex: 1;
+          padding: 14px;
+          margin-right: 10px;
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+          font-size: 16px;
+          outline: none;
+          transition: border-color 0.3s;
+
+          &:focus {
+            border-color: #fece51;
+          }
+        }
+      }
+
+      .search-button {
+        padding: 14px 20px; /* Added padding */
+        margin-left: 10px; /* Adjusted margin */
+        margin-bottom: 20px;
+        border: none;
+        background-color: #fece51;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        .search-icon {
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+
+        &:hover {
+          background-color: #fdba2c;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .type {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      button {
+        margin-bottom: 10px;
+      }
+    }
+
+    .search-form {
+      .form-row {
+        flex-direction: column;
+
+        .select-city,
+        .input-price,
+        .search-button {
+          width: calc(100% - 24px); /* Adjusted width */
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+
+        .price-inputs {
+          flex-direction: column;
+
+          .input-price {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

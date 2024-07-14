@@ -1,0 +1,363 @@
+.detailPage {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Add scrollbar for content overflow */
+  max-height: calc(100vh - 100px); /* Adjust max height as needed */
+}
+
+.requestCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 800px; /* Adjust maximum width as needed */
+  word-wrap: break-word; /* Ensure long words break */
+}
+
+.requestDescription {
+  white-space: pre-line; /* Preserve line breaks */
+}
+
+.requestCard p {
+  margin: 10px 0;
+  color: #333;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.4em;
+  margin-top: 30px;
+}
+
+.addCommentSection {
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.commentForm textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.commentForm button {
+  align-self: center; /* Center the button horizontally */
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.commentForm button:hover {
+  background-color: #0056b3;
+}
+
+.readAllButton {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s;
+  display: block; /* Change display to block to center */
+  margin: 0 auto; /* Auto margins for centering horizontally */
+  margin-bottom: 10px; /* Optional: add margin bottom as per your design */
+}
+
+.readAllButton:hover {
+  background-color: #0056b3;
+}
+
+.commentCounter {
+  position: absolute;
+  top: -8px; /* Adjust to position above the button */
+  right: -8px; /* Adjust to position to the right of the button */
+  background-color: #5c0202; /* Green color */
+  color: #fff;
+  border-radius: 50%; /* Make it a circle */
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.counterAndButton {
+  position: relative; /* Ensure relative positioning for the counter */
+  display: inline-block; /* Ensure inline block display */
+}
+
+.commentsSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure popup is on top of other content */
+}
+
+.popupContent {
+  background-color: #fff;
+  padding: 20px;
+  padding-top: 50px; /* Add top padding */
+  width: 80%; /* Adjusted width for popup content */
+  max-width: 800px; /* Maximum width of popup */
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative; /* Ensure close button positioning relative to popup content */
+  z-index: 1010; /* Ensure popup content is on top of popup background */
+}
+
+.popupContent h2 {
+  margin-top: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px; /* Set a fixed width */
+  height: 30px; /* Set a fixed height */
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+  color: #fff; /* White text color */
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%; /* Rounded shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.closeButton:hover {
+  background: linear-gradient(135deg, #0056b3, #003a73); /* Darker gradient on hover */
+  transform: scale(1.05); /* Scale up slightly on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.closeButton:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+.closeButton::before,
+.closeButton::after {
+  content: ''; /* Create pseudo-elements for close icon */
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background-color: #fff; /* White color for icon lines */
+  transition: transform 0.3s;
+}
+
+.closeButton::before {
+  transform: rotate(45deg); /* Adjust rotation for close shape */
+}
+
+.closeButton::after {
+  transform: rotate(-45deg); /* Second line of close */
+}
+
+
+
+
+.allComments {
+  margin-top: 10px;
+}
+
+.comment {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 50px;             /* Set the width of the avatar */
+  height: 50px;            /* Set the height of the avatar */
+  border-radius: 50%;      /* Make the avatar circular */
+  border: 2px solid #007bff; /* Add a border with your primary color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
+  object-fit: cover;       /* Ensure the image covers the entire element */
+  margin-right: 10px;      /* Add some space to the right of the avatar */
+}
+
+/* Optional: add a hover effect */
+.avatar:hover {
+  border-color: #0056b3;   /* Change border color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+.addPostSection {
+  margin-bottom: 20px; /* Add space below the add post section */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addPostSection h2 {
+  color: #333;
+  font-size: 1.4em;
+  margin-top: 0;
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.postForm {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.postForm select {
+  flex: 1;
+  height: 40px;
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.postForm button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.postForm button:hover {
+  background-color: #0056b3;
+}
+
+/* Add this CSS to style linked posts section */
+.postsSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.postsSection h2 {
+  font-size: 1.4em;
+  margin-top: 30px;
+}
+
+.linkedPosts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.linkedPost {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.linkedPost:hover {
+  background-color: #f0f0f0;
+}
+
+.linkedPost p {
+  margin: 5px 0;
+}
+
+.linkedPost img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.linkedPost .postContent {
+  flex: 1;
+}
+
+.linkedPost .avatar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Adjust the popup style for linked posts */
+.popupContent .allLinkedPosts {
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  
+  .linkedPosts {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .linkedPost {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,132 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* contactus.scss */
+
+.contactus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* Adjusted to make the form appear higher */
+  background-color: #f0f2f5;
+  padding: 20px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.contactus-container {
+  max-width: 800px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 160px); /* Adjusted max-height based on design */
+  padding-bottom: 100px; /* Increased padding at the bottom */
+}
+
+.contactus-content {
+  text-align: center;
+}
+
+.contactus-title {
+  font-size: 2rem; /* Adjusted font size */
+  color: #333333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contactus-description {
+  font-size: 1rem; /* Adjusted font size */
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+.contactus-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.contactus-input,
+.contactus-textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contactus-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contactus-button {
+  background-color: #da4ea2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b93c88;
+  }
+}
+
+.contactus-success-message {
+  margin-top: 10px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.contactus-info {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #666666;
+  padding-bottom: 20px; /* Added padding at the bottom */
+}
+
+.contactus-info a {
+  color: #da4ea2;
+  text-decoration: none;
+}
+
+.contactus-info a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .contactus-container {
+    padding: 20px;
+  }
+
+  .contactus-title {
+    font-size: 1.5rem; /* Adjusted font size for mobile */
+  }
+
+  .contactus-description {
+    font-size: 0.9rem; /* Adjusted font size for mobile */
+    margin-bottom: 20px;
+  }
+
+  .contactus-input,
+  .contactus-textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .contactus-textarea {
+    min-height: 120px;
+  }
+
+  .contactus-button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}

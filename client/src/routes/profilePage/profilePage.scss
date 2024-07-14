@@ -1,0 +1,113 @@
+@import "../../responsive.scss";
+
+.profilePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    overflow-y: auto;
+    padding: 20px;
+
+    @include md {
+      flex: none;
+      height: auto;
+      padding: 10px;
+    }
+
+    .wrapper {
+      padding-left: 50px; /* Adjusted for RTL */
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        direction: rtl; /* Right-to-left */
+
+        h1 {
+          font-weight: 300;
+          font-size: 24px;
+          color: #333;
+        }
+
+        button {
+          padding: 12px 24px;
+          background-color: #fece51;
+          color: #333;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #fdb515;
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          direction: rtl; /* Right-to-left */
+          font-size: 14px; /* Adjusted font size for mobile */
+          color: #666;
+        }
+
+        button {
+          width: 100%;
+          padding: 10px 20px;
+          background-color: teal;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #00796b;
+          }
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .chatContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    overflow-y: auto;
+    padding: 20px;
+    direction: ltr;
+
+    @include md {
+      flex: none;
+      height: auto;
+      padding: 10px;
+    }
+
+    .wrapper {
+      padding-right: 20px; /* Adjusted for RTL */
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.profileUpdatePage {
+  height: 100%;
+  display: flex;
+  
+  .formContainer {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        label {
+        }
+        
+        input {
+          padding: 15px; /* Adjusted padding for better mobile experience */
+          border-radius: 5px;
+          border: 1px solid gray;
+          font-size: 16px; /* Adjusted font size for better readability */
+        }
+      }
+      
+      button {
+        padding: 15px; /* Adjusted padding for better mobile experience */
+        border-radius: 5px;
+        border: none;
+        background-color: teal;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px; /* Adjusted font size for better readability */
+      }
+    }
+  }
+  
+  .sideContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    
+    .avatar {
+      width: 50%; /* Adjusted width for better mobile experience */
+      height: auto; /* Ensures the avatar maintains aspect ratio */
+      border-radius: 50%; /* Displays the avatar as a circle */
+      object-fit: cover;
+    }
+  }
+  
+  @media (max-width: 768px) { /* Media query for mobile devices */
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    
+    .formContainer {
+      order: 2; /* Place form container below side container on mobile */
+      flex: 1; /* Take full width on mobile */
+    }
+    
+    .sideContainer {
+      order: 1; /* Place side container above form container on mobile */
+      flex: 1; /* Take full width on mobile */
+    }
+    
+    .avatar {
+      width: 70%; /* Adjusted width for better mobile experience */
+    }
+    
+    form {
+      padding: 20px; /* Added padding for better spacing on mobile */
+    }
+    
+    .item {
+      gap: 10px; /* Increased gap between form items on mobile */
+    }
+    
+    input, button {
+      padding: 15px; /* Adjusted padding for better mobile experience */
+    }
+  }
+}

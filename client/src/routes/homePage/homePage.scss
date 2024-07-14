@@ -1,0 +1,216 @@
+@import "../../responsive.scss";
+.homePage {
+  display: flex;
+  height: 100%;
+  direction: rtl;
+  overflow-y: auto;
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it's above other content */
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 80%;
+      text-align: right;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+      h2 {
+        font-size: 20px;
+        color: #2c3e50;
+        margin-bottom: 20px; /* Increase bottom margin for more spacing */
+        font-family: 'Cairo', sans-serif;
+        text-align: center; /* Align to center */
+      }
+      
+      p {
+        font-size: 18px;
+        color: #34495e;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        text-align: center; /* Align to center */
+        padding: 0 20px; /* Add padding for horizontal spacing */
+      }
+      
+      button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        display: block; /* Make button a block element */
+        margin: 20px auto; /* Center button and add top/bottom margin */
+      }
+      
+      button:hover {
+        background-color: #c0392b;
+      }   
+      
+    }
+  }
+  .spacer {
+    height: 100px; /* Adjust the height as needed */
+  }
+
+  .textContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+
+    .wrapper {
+      padding-left: 100px;
+      padding-top: 20px; /* Adjusted padding top */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Align content to the top */
+      gap: 10px; /* Reduce gap between elements */
+      height: 100%;
+
+      @include lg {
+        padding-left: 50px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      @include sm {
+        padding: 10px;
+      }
+
+      .title {
+        font-size: 50px;
+        color: #2c3e50;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 0; /* Remove default margin */
+
+        @include lg {
+          font-size: 48px;
+        }
+      }
+
+      .description {
+        font-size: 24px;
+        color: #34495e;
+        font-family: 'Cairo', sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+
+        .highlight {
+          font-size: 24px;
+          color: #e74c3c;
+          font-weight: 700;
+        }
+
+        @include lg {
+          font-size: 20px;
+
+          .highlight {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .posts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between; /* Distribute posts evenly */
+
+        .post {
+          flex: 0 1 calc(33.333% - 20px); /* Adjusted for spacing */
+          max-width: calc(33.333% - 20px); /* Adjusted for spacing */
+          margin-bottom: 20px; /* Added space between posts */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s ease;
+          opacity: 1; /* Show posts by default */
+          visibility: visible; /* Show posts by default */
+          position: relative; /* Reset position */
+
+          img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px;
+            object-fit: cover; /* Cover the container */
+            transition: opacity 0.2s ease;
+          }
+
+          h2 {
+            font-size: 20px;
+            font-weight: 300;
+            padding: 10px;
+            text-align: center;
+            color: #2c3e50;
+          }
+        }
+
+        @include sm {
+          flex-direction: column; /* Change to column layout for mobile */
+          gap: 20px; /* Space between posts */
+
+          .post {
+            flex: 1 0 auto; /* Take full width */
+            max-width: 100%; /* Ensure full width */
+            margin-bottom: 20px; /* Added space between posts */
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Ensure image doesn't overflow container */
+
+    img {
+      width: 100%;
+      height: auto; /* Adjusted for aspect ratio */
+      object-fit: cover; /* Maintain aspect ratio and cover container */
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      @include lg {
+        width: 105%;
+      }
+    }
+
+    @include md {
+      display: none;
+    }
+  }
+
+  @include sm {
+    .textContainer {
+      .wrapper {
+        .posts {
+          gap: 20px; /* Space between slides */
+          padding-bottom: 30px;
+        }
+      }
+    }
+  }
+}
