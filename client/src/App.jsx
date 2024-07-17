@@ -8,7 +8,7 @@ import Login from "./routes/login/login";
 import Register from "./routes/register/register";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
-import UpdatePage from "./routes/updatePage/updatePage";
+import UpdatePage from "./routes/updatePage/UpdatePage";
 import RequestPage  from "./routes/requestPage/RequestPage";
 import DetailPage from './routes/detailpage/DetailPage';
 import Contaus from './routes/contactus/contactus';
