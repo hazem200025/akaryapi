@@ -1,11 +1,26 @@
 import { Server } from "socket.io";
 import http from "http";
 import cors from "cors";
+import express from "express";
 
-const server = http.createServer();
+// Create an Express app
+const app = express();
+
+// Configure CORS middleware
+app.use(cors({
+  origin: ["http://localhost:5173", "http://localhost:4173", "http://195.200.14.15:8800"],
+  methods: ["GET", "POST"],
+  allowedHeaders: ["my-custom-header"],
+  credentials: true
+}));
+
+// Create HTTP server using the Express app
+const server = http.createServer(app);
+
+// Configure Socket.IO with CORS
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:4173","http://195.200.14.15:8800"],
+    origin: ["http://localhost:5173", "http://localhost:4173", "http://195.200.14.15:8800"],
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true
@@ -49,6 +64,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(4000, () => {
-  console.log("Server running on port 4000");
+const PORT = process.env.PORT || 4000;
+
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
