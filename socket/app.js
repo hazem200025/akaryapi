@@ -5,7 +5,7 @@ import cors from "cors";
 const server = http.createServer();
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:4173"],
+    origin: ["http://localhost:5173", "http://localhost:4173","http://195.200.14.15:8800"],
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true
